@@ -1,4 +1,8 @@
-apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
+
 
 android {
     compileSdkVersion configs.compileSdkVersion
@@ -22,7 +26,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile deps.appcompatV7
+//    testCompile 'junit:junit:4.12'
+    compile deps.appcompatx
     compile project(':cardstack')
 }

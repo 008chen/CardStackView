@@ -2,23 +2,41 @@
 
 buildscript {
     repositories {
-        jcenter()
+               maven {
+            url = "https://maven.aliyun.com/repository/gradle-plugin"
+        }
+        maven {
+            url = "https://maven.aliyun.com/repository/google/"
+        }
+        maven { url = "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url = "http://maven.aliyun.com/nexus/content/repositories/jcenter"}
+        maven { url = "http://maven.aliyun.com/nexus/content/repositories/google" }
+        maven { url = "http://maven.aliyun.com/nexus/content/repositories/gradle-plugin"}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.android.tools.build:gradle:4.2.0'
+        //classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
-plugins {
-    id "com.jfrog.bintray" version "1.7.3"
-}
+//plugins {
+  //  id "com.jfrog.bintray" version "1.7.3"
+//}
 
 allprojects {
     repositories {
-        jcenter()
+               maven {
+            url = "https://maven.aliyun.com/repository/gradle-plugin"
+        }
+        maven {
+            url = "https://maven.aliyun.com/repository/google/"
+        }
+        maven { url = "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url = "http://maven.aliyun.com/nexus/content/repositories/jcenter"}
+        maven { url = "http://maven.aliyun.com/nexus/content/repositories/google" }
+        maven { url = "http://maven.aliyun.com/nexus/content/repositories/gradle-plugin"}
     }
 }
 
@@ -28,10 +46,10 @@ task clean(type: Delete) {
 
 ext {
     configs = [
-            compileSdkVersion   : 25,
-            buildToolsVersion   : '25.0.2',
-            minSdkVersion       : 14,
-            targetSdkVersion    : 25,
+            compileSdkVersion   : 29,
+            buildToolsVersion   : '30.0.2',
+            minSdkVersion       : 28,
+            targetSdkVersion    : 29,
             versionCode         : 1,
             versionName         : '1.0',
             cardstackversionName: '1.0.2'
@@ -41,5 +59,7 @@ ext {
 
     deps = [
             appcompatV7: "com.android.support:appcompat-v7:$supportLibraryVersion",
+
+            appcompatx:  "androidx.appcompat:appcompat:1.2.0"
     ]
 }
